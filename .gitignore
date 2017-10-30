@@ -1,4 +1,4 @@
 .idea
 .vscode
 /node_modules
-.errors.log
+errors.log
