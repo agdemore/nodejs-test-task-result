@@ -19,7 +19,7 @@ const logger = new winston.Logger({
   ]
 });
 
-function requestPromise(url, timeout) {
+function requestData(url, timeout) {
   return new Promise((resolve, reject) => {
     let request = http.get(url, (res) => {
       let data = "";
@@ -83,8 +83,8 @@ http.createServer(async (req, res) => {
         
         let news;
         let phrases;
-        let newsRequest = requestPromise(NEWS_URL, 6000);
-        let phrasesRequest = requestPromise(PHRASE_URL, 6000);
+        let newsRequest = requestData(NEWS_URL, 6000);
+        let phrasesRequest = requestData(PHRASE_URL, 6000);
 
         try {
           news = JSON.parse(await newsRequest);
